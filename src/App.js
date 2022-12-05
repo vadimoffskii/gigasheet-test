@@ -20,7 +20,7 @@ const App = () => {
   useEffect(async () => {
     gridRef.current.api?.showLoadingOverlay()
     try {
-      const response = await fetch(process.env.REACT_APP_USERS_API)
+      const response = await fetch('https://jsonplaceholder.typicode.com/users')
       const data = await response.json()
       if (data.length) {
         dispatch({ type: 'GET_ALL_USERS', payload: data })
